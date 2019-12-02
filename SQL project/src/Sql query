@@ -1,0 +1,1066 @@
+1. Get all employee details from the employee table
+select *from Employee;
+1	Venkatesh	S	100000	2015-08-28	BANKING
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+3	Gopinath	C	50000	2016-02-03	PHARMA
+4	Dinesh	G	50000	2016-02-03	 INSURANCE
+5	Saibabu	E	40000	2017-08-07	SOFTWARE
+6	Hasan	S	29000	2017-08-07	MANUFACTURING
+7	Divya	P	33000	2017-08-07	HEALTHCARE
+8	Aravindan	R	40000	2017-08-07	HEALTHCARE
+9	Sathish	MD	45000	2016-02-03	AUTOMOBILE
+10	Prasanth	PKP	34000	2016-02-03	INSURANCE
+11	Vijay	R	25684	2016-02-03	BUSINESS
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+
+
+2. Get First_Name,Last_Name from employee table
+select FirstName,LastName from Employee;
+Venkatesh	S
+Ragavi	P
+Gopinath	C
+Dinesh	G
+Saibabu	E
+Hasan	S
+Divya	P
+Aravindan	R
+Sathish	MD
+Prasanth	PKP
+Vijay	R
+Sivakumar	K
+
+3. Get First_Name from employee table using alias name “Employee Name”
+select `FirstName`  Employee_Name from Employee;
+Venkatesh
+Ragavi
+Gopinath
+Dinesh
+Saibabu
+Hasan
+Divya
+Aravindan
+Sathish
+Prasanth
+Vijay
+Sivakumar
+
+/select FirstName from Employee where FirstName Like '%Divya%';
+Divya
+
+4. Get First_Name from employee table in upper case
+select UPPER(FirstName) from Employee;
+
+VENKATESH
+RAGAVI
+GOPINATH
+DINESH
+SAIBABU
+HASAN
+DIVYA
+ARAVINDAN
+SATHISH
+PRASANTH
+VIJAY
+SIVAKUMAR
+5. Get First_Name from employee table in lower case
+select LOWER(FirstName) from Employee;
+venkatesh
+ragavi
+gopinath
+dinesh
+saibabu
+hasan
+divya
+aravindan
+sathish
+prasanth
+vijay
+sivakumar
+
+6. Get unique DEPARTMENT from employee table
+BANKING
+BUSINESS
+PHARMA
+ INSURANCE
+SOFTWARE
+MANUFACTURING
+HEALTHCARE
+AUTOMOBILE
+INSURANCE
+
+7. Select first 3 characters of FIRST_NAME from EMPLOYEE
+select SUBSTRING(FirstName,1,3) from Employee;
+Ven
+Rag
+Gop
+Din
+Sai
+Has
+Div
+Ara
+Sat
+Pra
+Vij
+Siv
+8. Get position of 'a' in name 'ragavi' from employee table
+select POSITION("a" IN "Ragavi") from Employee where FirstName='Ragavi';
+2
+
+9. Get FIRST_NAME from employee table after removing white spaces from right side
+
+select RTRIM(FirstName) from Employee;
+Venkatesh
+Ragavi
+Gopinath
+Dinesh
+Saibabu
+Hasan
+Divya
+Aravindan
+Sathish
+Prasanth
+Vijay
+Sivakumar
+
+
+10.Get FIRST_NAME from employee table after removing white spaces from left side
+
+select LTRIM(FirstName) from Employee;
+Venkatesh
+Ragavi
+Gopinath
+Dinesh
+Saibabu
+Hasan
+Divya
+Aravindan
+Sathish
+Prasanth
+Vijay
+Sivakumar
+
+11. Get length of FIRST_NAME from employee table
+select LENGTH(FirstName) FROM Employee;
+9
+6
+8
+6
+7
+5
+5
+9
+7
+8
+5
+9
+
+12. Get First_Name from employee table after replacing 'a' with '$'
+select REPLACE(FirstName,'a','$') from Employee;
+Venk$tesh
+R$g$vi
+Gopin$th
+Dinesh
+S$ib$bu
+H$s$n
+Divy$
+Ar$vind$n
+S$thish
+Pr$s$nth
+Vij$y
+Siv$kum$r
+13. Get First_Name and Last_Name as single column from employee table separated by a '_'
+
+select CONCAT (FirstName,'_',LastName) from Employee;
+Venkatesh_S
+Ragavi_P
+Gopinath_C
+Dinesh_G
+Saibabu_E
+Hasan_S
+Divya_P
+Aravindan_R
+Sathish_MD
+Prasanth_PKP
+Vijay_R
+Sivakumar_K
+
+14. Get FIRST_NAME ,Joiningyear,Joining Month and Joining Date from employee table	\
+Venkatesh	2015	8	28
+Ragavi	2015	8	28
+Gopinath	2016	2	3
+Dinesh	2016	2	3
+Saibabu	2017	8	7
+Hasan	2017	8	7
+Divya	2017	8	7
+Aravindan	2017	8	7
+Sathish	2016	2	3
+Prasanth	2016	2	3
+Vijay	2016	2	3
+Sivakumar	2016	2	3
+
+15. Get all employee details from the employee table order by First_Name Ascending
+
+8	Aravindan	R	40000	2017-08-07	HEALTHCARE
+4	Dinesh	G	50000	2016-02-03	 INSURANCE
+7	Divya	P	33000	2017-08-07	HEALTHCARE
+3	Gopinath	C	50000	2016-02-03	PHARMA
+6	Hasan	S	29000	2017-08-07	MANUFACTURING
+10	Prasanth	PKP	34000	2016-02-03	INSURANCE
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+5	Saibabu	E	40000	2017-08-07	SOFTWARE
+9	Sathish	MD	45000	2016-02-03	AUTOMOBILE
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+1	Venkatesh	S	100000	2015-08-28	BANKING
+11	Vijay	R	25684	2016-02-03	BUSINESS
+
+
+16. Get all employee details from the employee table order by First_Namedescending
+11	Vijay	R	25684	2016-02-03	BUSINESS
+1	Venkatesh	S	100000	2015-08-28	BANKING
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+9	Sathish	MD	45000	2016-02-03	AUTOMOBILE
+5	Saibabu	E	40000	2017-08-07	SOFTWARE
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+10	Prasanth	PKP	34000	2016-02-03	INSURANCE
+6	Hasan	S	29000	2017-08-07	MANUFACTURING
+3	Gopinath	C	50000	2016-02-03	PHARMA
+7	Divya	P	33000	2017-08-07	HEALTHCARE
+4	Dinesh	G	50000	2016-02-03	 INSURANCE
+8	Aravindan	R	40000	2017-08-07	HEALTHCARE
+
+17. Get all employee details from the employee table order by First_Name Ascending and Salary descending
+select * from Employee  ORDER BY  FirstName ASC;
+8	Aravindan	R	40000	2017-08-07	HEALTHCARE
+4	Dinesh	G	50000	2016-02-03	 INSURANCE
+7	Divya	P	33000	2017-08-07	HEALTHCARE
+3	Gopinath	C	50000	2016-02-03	PHARMA
+6	Hasan	S	29000	2017-08-07	MANUFACTURING
+10	Prasanth	PKP	34000	2016-02-03	INSURANCE
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+5	Saibabu	E	40000	2017-08-07	SOFTWARE
+9	Sathish	MD	45000	2016-02-03	AUTOMOBILE
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+1	Venkatesh	S	100000	2015-08-28	BANKING
+11	Vijay	R	25684	2016-02-03	BUSINESS
+
+18. Get employee details from employee table whose employee name is “Dinesh”
+select * from Employee where FirstName="Dinesh";
+4	Dinesh	G	50000	2016-02-03	 INSURANCE
+
+19. Get employee details from employee table whose employee name are “Dinesh” and “Roy”
+select * from Employee where FirstName="Dinesh" AND FirstName in("Dinesh","Roy");
+4	Dinesh	G	50000	2016-02-03	 INSURANCE
+
+20. Get employee details from employee table whose employee name are not “Dinesh” and “Roy”
+
+1	Venkatesh	S	100000	2015-08-28	BANKING
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+3	Gopinath	C	50000	2016-02-03	PHARMA
+5	Saibabu	E	40000	2017-08-07	SOFTWARE
+6	Hasan	S	29000	2017-08-07	MANUFACTURING
+7	Divya	P	33000	2017-08-07	HEALTHCARE
+8	Aravindan	R	40000	2017-08-07	HEALTHCARE
+9	Sathish	MD	45000	2016-02-03	AUTOMOBILE
+10	Prasanth	PKP	34000	2016-02-03	INSURANCE
+11	Vijay	R	25684	2016-02-03	BUSINESS
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+
+21. Get employee details from employee table whose first name starts with 's'
+select * from Employee where FirstName Like 'S%';
+
+5	Saibabu	E	40000	2017-08-07	SOFTWARE
+9	Sathish	MD	45000	2016-02-03	AUTOMOBILE
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+
+22. Get employee details from employee table whose first name contains 'v'
+select  * from Employee Where FirstName Like '%v%';
+
+1	Venkatesh	S	100000	2015-08-28	BANKING
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+7	Divya	P	33000	2017-08-07	HEALTHCARE
+8	Aravindan	R	40000	2017-08-07	HEALTHCARE
+11	Vijay	R	25684	2016-02-03	BUSINESS
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+23. Get employee details from employee table whose first name ends with 'n'
+select * from Employee where FirstName Like '%n';
+6	Hasan	S	29000	2017-08-07	MANUFACTURING
+8	Aravindan	R	40000	2017-08-07	HEALTHCARE
+24. Get employee details from employee table whose first name ends with 'n' and name contains 4 letters
+select * from Employee where length(FirstName)=4 and FirstName Like '%n' ;
+Output:
+No matching output
+25. Get employee details from employee table whose first name starts with 'J' and name contains 4 letters
+select * from Employee where length(FirstName)=4 and FirstName like '%j';
+Output:
+No matching output
+26. Get employee details from employee table who’s Salary greater than 60000
+select * from Employee where salary >60000;
+1	Venkatesh	S	100000	2015-08-28	BANKING
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+27. Get employee details from employee table who’s Salary less than 80000
+select * from Employee where salary <80000;
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+3	Gopinath	C	50000	2016-02-03	PHARMA
+4	Dinesh	G	50000	2016-02-03	 INSURANCE
+5	Saibabu	E	40000	2017-08-07	SOFTWARE
+6	Hasan	S	29000	2017-08-07	MANUFACTURING
+7	Divya	P	33000	2017-08-07	HEALTHCARE
+8	Aravindan	R	40000	2017-08-07	HEALTHCARE
+9	Sathish	MD	45000	2016-02-03	AUTOMOBILE
+10	Prasanth	PKP	34000	2016-02-03	INSURANCE
+11	Vijay	R	25684	2016-02-03	BUSINESS
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+
+
+
+
+
+28. Get employee details from employee table who’s Salary between 50000 and 80000
+select * from Employee where salary >=50000  and salary<=80000;
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+3	Gopinath	C	50000	2016-02-03	PHARMA
+4	Dinesh	G	50000	2016-02-03	 INSURANCE
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+29. Get employee details from employee table whose name is venkatesh and ragavi
+select * from Employee where FirstName in ('Venkatesh','Ragavi');
+1	Venkatesh	S	100000	2015-08-28	BANKING
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+
+30. Get employee details from employee table whose joining year is “2015”
+select * from Employee where year(JoiningDate)=2015;
+1	Venkatesh	S	100000	2015-08-28	BANKING
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+
+31. Get employee details from employee table whose joining month is “January”
+select * from Employee where month(JoiningDate)=1;
+Output:
+No Matching Output
+32. Get employee details from employee table who joined before January 1st 2017
+select * from Employee where year(JoiningDate)<2017;
+1	Venkatesh	S	100000	2015-08-28	BANKING
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+3	Gopinath	C	50000	2016-02-03	PHARMA
+4	Dinesh	G	50000	2016-02-03	 INSURANCE
+9	Sathish	MD	45000	2016-02-03	AUTOMOBILE
+10	Prasanth	PKP	34000	2016-02-03	INSURANCE
+11	Vijay	R	25684	2016-02-03	BUSINESS
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+
+
+33. Get employee details from employee table who joined after January 31st 2016
+select * from Employee where month(JoiningDate)>1 and year(JoiningDate)>2016;
+5	Saibabu	E	40000	2017-08-07	SOFTWARE
+6	Hasan	S	29000	2017-08-07	MANUFACTURING
+7	Divya	P	33000	2017-08-07	HEALTHCARE
+8	Aravindan	R	40000	2017-08-07	HEALTHCARE
+
+35. Get Joining Date and Time from employee table
+select JoiningDate,now() from Employee;
+2015-08-28	2019-11-30 08:43:16
+2015-08-28	2019-11-30 08:43:16
+2016-02-03	2019-11-30 08:43:16
+2016-02-03	2019-11-30 08:43:16
+2017-08-07	2019-11-30 08:43:16
+2017-08-07	2019-11-30 08:43:16
+2017-08-07	2019-11-30 08:43:16
+2017-08-07	2019-11-30 08:43:16
+2016-02-03	2019-11-30 08:43:16
+2016-02-03	2019-11-30 08:43:16
+2016-02-03	2019-11-30 08:43:16
+2016-02-03	2019-11-30 08:43:16
+41. Get department,total salary with respect to a department from employee table.
+select Department,sum(salary) from Employee group by Department;
+INSURANCE	50000
+AUTOMOBILE	45000
+BANKING	100000
+BUSINESS	100684
+HEALTHCARE	73000
+INSURANCE	34000
+MANUFACTURING	29000
+PHARMA	50000
+SOFTWARE	94789
+40. Get Last Name from employee table after replacing special character with white space
+select replace(LastName,'%',' ') from Employee;
+S
+P
+C
+G
+E
+S
+P
+R
+MD
+PKP
+R
+K
+42. Get department,total salary with respect to a department from employee table order by total salary descending
+select Department,sum(salary) from Employee  group by Department order by sum(Salary) desc;
+43. Get department,no of employees in a department,total salary with respect to a department from employee table order by total salary descending
+select Department,count(FirstName),sum(salary) from Employee group by Department order by sum(Salary) desc;
+BUSINESS	2	100684
+BANKING	1	100000
+SOFTWARE	2	94789
+HEALTHCARE	2	73000
+PHARMA	1	50000
+ INSURANCE	1	50000
+AUTOMOBILE	1	45000
+INSURANCE	1	34000
+MANUFACTURING	1	29000
+44. Get department wise average salary from employee table order by salary ascending
+select Department,avg(Salary) avg_sal  from Employee group by Department order by avg_sal ASC;
+MANUFACTURING	29000
+INSURANCE	34000
+HEALTHCARE	36500
+AUTOMOBILE	45000
+SOFTWARE	47394.5
+PHARMA	50000
+ INSURANCE	50000
+BUSINESS	50342
+BANKING	100000
+
+
+
+
+
+
+45. Get department wise maximum salary from employee table order by salary ascending
+select department,max(salary) maxsalary from Employee group by department order by maxsalary asc;
+BANKING	100000
+MANUFACTURING	29000
+INSURANCE	34000
+HEALTHCARE	40000
+AUTOMOBILE	45000
+PHARMA	50000
+ INSURANCE	50000
+SOFTWARE	54789
+BUSINESS	75000
+
+46. Get department wise minimum salary from employee table order by salary ascending
+SELECT DEPARTMENT,Min(SALARY) MinSALARY
+FROM Employee GROUP BY DEPARTMENT ORDER BY MinSALARY ASC;
+BANKING	100000
+BUSINESS	25684
+MANUFACTURING	29000
+HEALTHCARE	33000
+INSURANCE	34000
+SOFTWARE	40000
+AUTOMOBILE	45000
+PHARMA	50000
+ INSURANCE	50000
+
+47. Select no of employees joined with respect to year and month from employee table
+SELECT Department,SUM(Salary) TOTAL_SALARY FROM Employee GROUP BY Department HAVING SUM(Salary) >800000 ORDER BY TOTAL_SALARY DESC;
+Output:
+No output to display
+
+
+49. Select first_name, incentive amount from employee and incentives table for those employees who have incentives
+select FirstName, incentive_amount FROM Employee A INNER JOIN  Incentives B ON A.Emp_Id=B.Employee_ref_id;
+
+Venkatesh	5000
+Ragavi	3000
+Gopinath	4000
+Venkatesh	4500
+Ragavi	3500
+
+50. Select first_name, incentive amount from employee and incentives table for those employees who have incentives and incentive amount greater than 3000
+select FirstName, incentive_amount FROM Employee A INNER JOIN  Incentives B ON A.Emp_Id=B.Employee_ref_id where incentive_amount>3000;
+Venkatesh	5000
+Gopinath	4000
+Venkatesh	4500
+Ragavi	3500
+
+51. Select first_name, incentive amount from employee and incentives table for all employes even if they didn't get incentives
+select FirstName, incentive_amount FROM Employee A LEFT JOIN  Incentives B  on A.Emp_Id=B.Employee_ref_id;
+Venkatesh	5000
+Ragavi	3000
+Gopinath	4000
+Venkatesh	4500
+Ragavi	3500
+Dinesh	NULL
+Saibabu	NULL
+Hasan	NULL
+Divya	NULL
+Aravindan	NULL
+Sathish	NULL
+Prasanth	NULL
+Vijay	NULL
+Sivakumar	NULL
+52. Select first_name, incentive amount from employee and incentives table for all employees even if they didn't get incentives and set incentive amount as 0 for those employees who didn't get incentives.
+select FirstName, ifnull(incentive_amount,0) FROM Employee A LEFT JOIN  Incentives B  on A.Emp_Id=B.Employee_ref_id;
+Venkatesh	5000
+Ragavi	3000
+Gopinath	4000
+Venkatesh	4500
+Ragavi	3500
+Dinesh	0
+Saibabu	0
+Hasan	0
+Divya	0
+Aravindan	0
+Sathish	0
+Prasanth	0
+Vijay	0
+Sivakumar	0
+53. Select first_name, incentive amount from employee and incentives table for all employees who got incentives using left join
+select FirstName, ifnull(incentive_amount,0) FROM Employee A LEFT JOIN  Incentives B  on A.Emp_Id=B.Employee_ref_id;
+Venkatesh	5000
+Ragavi	3000
+Gopinath	4000
+Venkatesh	4500
+Ragavi	3500
+Dinesh	0
+Saibabu	0
+Hasan	0
+Divya	0
+Aravindan	0
+Sathish	0
+Prasanth	0
+Vijay	0
+Sivakumar	0
+
+54. Select max incentive with respect to employee from employee and incentives table using sub query
+SELECT DEPARTMENT,(SELECT ifnull(MAX(INCENTIVE_AMOUNT),0)  FROM Incentives WHERE EMPLOYEE_REF_ID=Emp_id) MAX_INCENTIVE 	FROM Employee;
+BANKING	5000
+BUSINESS	3500
+PHARMA	4000
+ INSURANCE	0
+SOFTWARE	0
+MANUFACTURING	0
+HEALTHCARE	0
+HEALTHCARE	0
+AUTOMOBILE	0
+INSURANCE	0
+BUSINESS	0
+SOFTWARE	0
+
+
+55. Select TOP 2 salary from employee table
+select * from Employee order by Salary Desc limit 2;
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+56. Select TOP N salary from employee table
+select * from Employee order by Salary Desc limit 5;
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+3	Gopinath	C	50000	2016-02-03	PHARMA
+4	Dinesh	G	50000	2016-02-03	 INSURANCE
+9	Sathish	MD	45000	2016-02-03	AUTOMOBILE
+57. Select 2nd Highest salary from employee table
+
+
+
+
+64. Select 20 % of salary from venkat , 10% of Salary for gopi and for other 15 % of salary from employee table
+select FirstName,
+CASE FirstName
+    WHEN 'venkatesh'
+    THEN Salary * .2
+    WHEN 'Gopinath'
+    THEN Salary * .10
+    ELSE Salary * .15
+  END "Deduced_Amount"
+FROM
+  Employee;
+Venkatesh	20000
+Ragavi	11250
+Gopinath	5000
+Dinesh	7500
+Saibabu	6000
+Hasan	4350
+Divya	4950
+Aravindan	6000
+Sathish	6750
+Prasanth	5100
+Vijay	3852.6
+Sivakumar	8218.35
+
+
+	
+68. Select Last Name from employee table which contain only numbers
+SELECT * FROM Employee WHERE LOWER(LastName)=UPPER(LastName);
+
+1	Venkatesh	S	100000	2015-08-28	BANKING
+2	Ragavi	P	75000	2015-08-28	BUSINESS
+3	Gopinath	C	50000	2016-02-03	PHARMA
+4	Dinesh	G	50000	2016-02-03	 INSURANCE
+5	Saibabu	E	40000	2017-08-07	SOFTWARE
+6	Hasan	S	29000	2017-08-07	MANUFACTURING
+7	Divya	P	33000	2017-08-07	HEALTHCARE
+8	Aravindan	R	40000	2017-08-07	HEALTHCARE
+9	Sathish	MD	45000	2016-02-03	AUTOMOBILE
+10	Prasanth	PKP	34000	2016-02-03	INSURANCE
+11	Vijay	R	25684	2016-02-03	BUSINESS
+12	Sivakumar	K	54789	2016-02-03	SOFTWARE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+create table Employee(Emp_Id int PRIMARY KEY,FirstName varchar(255),LastName varchar(255),Salary varchar(255),JoiningDate date ,Department varchar(255));
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(1,"Venkatesh","S","100000","2015/08/28","BANKING");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(2,"Ragavi","P","75000","2015/08/28","BUSINESS");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(3,"Gopinath","C","50000","2016/02/03","PHARMA");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(4,"Dinesh","G","50000","2016/02/03"," INSURANCE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(5,"Saibabu","E","40000","2017/08/07","SOFTWARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(6,"Hasan","S","29000","2017/08/07","MANUFACTURING");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(7,"Divya","P","33000","2017/08/07","HEALTHCARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(8,"Aravindan","R","40000","2017/08/07","HEALTHCARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(9,"Sathish","MD","45000","2016/02/03","AUTOMOBILE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(10,"Prasanth","PKP","34000","2016/02/03","INSURANCE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(11,"Vijay","R","25684","2016/02/03","BUSINESS");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(12,"Sivakumar","K","54789","2016/02/03","SOFTWARE");
+
+/*select *from Employee;*/
+/*select FirstName,LastName from Employee;*/
+/*select `FirstName`  Employee_Name from Employee;*/
+/*select FirstName from Employee where FirstName Like '%Divya%';*/
+/*select UPPER(FirstName) from Employee;*/
+/*select DISTINCT Department from Employee;*/
+/*select SUBSTRING(FirstName,1,3) from Employee;*/
+/*select POSITION("a" IN "Ragavi") from Employee where FirstName='Ragavi';*/
+/*select RTRIM(FirstName) from Employee;*/
+/*select LTRIM(FirstName) from Employee;*/
+/*select LENGTH(FirstName) FROM Employee;*/
+/*select REPLACE(FirstName,'a','$') from Employee;*/
+/*select CONCAT (FirstName,'_',LastName) from Employee;*/
+/*select FirstName,year(JoiningDate),month(JoiningDate),day(JoiningDate) from Employee;*/
+/*select *  from Employee ORDER BY FirstName ASC;*/
+/*select * from Employee ORDER BY FirstName DESC;*/
+/*select * from Employee  ORDER BY  FirstName ASC;*/
+/*select * from Employee where FirstName="Dinesh";*/
+/*select * from Employee where  FirstName in("Dinesh","Roy");*/
+/*select * from Employee where FirstName not in("Dinesh","Roy");*/
+/*select * from Employee where FirstName Like 'S%';*/
+select  * from Employee Where FirstName Like '%v%';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+create table Employee(Emp_Id int PRIMARY KEY,FirstName varchar(255),LastName varchar(255),Salary varchar(255),JoiningDate date ,Department varchar(255));
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(1,"Venkatesh","S","100000","2015/08/28","BANKING");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(2,"Ragavi","P","75000","2015/08/28","BUSINESS");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(3,"Gopinath","C","50000","2016/02/03","PHARMA");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(4,"Dinesh","G","50000","2016/02/03"," INSURANCE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(5,"Saibabu","E","40000","2017/08/07","SOFTWARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(6,"Hasan","S","29000","2017/08/07","MANUFACTURING");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(7,"Divya","P","33000","2017/08/07","HEALTHCARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(8,"Aravindan","R","40000","2017/08/07","HEALTHCARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(9,"Sathish","MD","45000","2016/02/03","AUTOMOBILE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(10,"Prasanth","PKP","34000","2016/02/03","INSURANCE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(11,"Vijay","R","25684","2016/02/03","BUSINESS");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(12,"Sivakumar","K","54789","2016/02/03","SOFTWARE");
+
+/*select *from Employee;*/
+/*select FirstName,LastName from Employee;*/
+/*select `FirstName`  Employee_Name from Employee;*/
+/*select FirstName from Employee where FirstName Like '%Divya%';*/
+/*select UPPER(FirstName) from Employee;*/
+/*select DISTINCT Department from Employee;*/
+/*select SUBSTRING(FirstName,1,3) from Employee;*/
+/*select POSITION("a" IN "Ragavi") from Employee where FirstName='Ragavi';*/
+/*select RTRIM(FirstName) from Employee;*/
+/*select LTRIM(FirstName) from Employee;*/
+/*select LENGTH(FirstName) FROM Employee;*/
+/*select REPLACE(FirstName,'a','$') from Employee;*/
+/*select CONCAT (FirstName,'_',LastName) from Employee;*/
+/*select FirstName,year(JoiningDate),month(JoiningDate),day(JoiningDate) from Employee;*/
+/*select *  from Employee ORDER BY FirstName ASC;*/
+/*select * from Employee ORDER BY FirstName DESC;*/
+/*select * from Employee  ORDER BY  FirstName ASC;*/
+/*select * from Employee where FirstName="Dinesh";*/
+/*select * from Employee where  FirstName in("Dinesh","Roy");*/
+/*select * from Employee where FirstName not in("Dinesh","Roy");*/
+/*select * from Employee where FirstName Like 'S%';*/
+/*select  * from Employee Where FirstName Like '%v%';*/
+/*select * from Employee where FirstName Like '%n';*/
+select * from Employee where FirstName Like '%n' from Employee;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- create database Employee1
+ create table Employee(Emp_Id int PRIMARY KEY,FirstName varchar(255),LastName varchar(255),Salary varchar(255),JoiningDate date ,Department varchar(255));
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(1,"Venkatesh","S","100000","2015/08/28","BANKING");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(2,"Ragavi","P","75000","2015/08/28","BUSINESS");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(3,"Gopinath","C","50000","2016/02/03","PHARMA");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(4,"Dinesh","G","50000","2016/02/03"," INSURANCE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(5,"Saibabu","E","40000","2017/08/07","SOFTWARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(6,"Hasan","S","29000","2017/08/07","MANUFACTURING");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(7,"Divya","P","33000","2017/08/07","HEALTHCARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(8,"Aravindan","R","40000","2017/08/07","HEALTHCARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(9,"Sathish","MD","45000","2016/02/03","AUTOMOBILE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(10,"Prasanth","PKP","34000","2016/02/03","INSURANCE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(11,"Vijay","R","25684","2016/02/03","BUSINESS");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(12,"Sivakumar","K","54789","2016/02/03","SOFTWARE");
+
+/*select *from Employee;*/
+/*select FirstName,LastName from Employee;*/
+/*select `FirstName`  Employee_Name from Employee;*/
+/*select FirstName from Employee where FirstName Like '%Divya%';*/
+/*select UPPER(FirstName) from Employee;*/
+/*select DISTINCT Department from Employee;*/
+/*select SUBSTRING(FirstName,1,3) from Employee;*/
+/*select POSITION("a" IN "Ragavi") from Employee where FirstName='Ragavi';*/
+/*select RTRIM(FirstName) from Employee;*/
+/*select LTRIM(FirstName) from Employee;*/
+/*select LENGTH(FirstName) FROM Employee;*/
+/*select REPLACE(FirstName,'a','$') from Employee;*/
+/*select CONCAT (FirstName,'_',LastName) from Employee;*/
+/*select FirstName,year(JoiningDate),month(JoiningDate),day(JoiningDate) from Employee;*/
+/*select *  from Employee ORDER BY FirstName ASC;*/
+/*select * from Employee ORDER BY FirstName DESC;*/
+/*select * from Employee  ORDER BY  FirstName ASC;*/
+/*select * from Employee where FirstName="Dinesh";*/
+/*select * from Employee where  FirstName in("Dinesh","Roy");*/
+/*select * from Employee where FirstName not in("Dinesh","Roy");*/
+/*select * from Employee where FirstName Like 'S%';*/
+/*select  * from Employee Where FirstName Like '%v%';*/
+/*select * from Employee where FirstName Like '%n';*/
+-- select * from Employee where length(FirstName)=4 and FirstName Like '%n' ;
+-- select * from Employee where length(FirstName)=4 and FirstName like '%j';
+-- select * from Employee where salary >60000;
+-- select * from Employee where salary <80000;
+-- select * from Employee where salary >=50000  and salary<=80000;
+-- select * from Employee where FirstName in ('Venkatesh','Ragavi');
+-- select * from Employee where year(JoiningDate)=2015;
+-- select * from Employee where month(JoiningDate)=1;
+-- select * from Employee where year(JoiningDate)<2017;
+-- select * from Employee where month(JoiningDate)>1 and year(JoiningDate)>2016;
+select JoiningDate,time from Employee;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- create database Employee1
+ create table Employee(Emp_Id int PRIMARY KEY,FirstName varchar(255),LastName varchar(255),Salary varchar(255),JoiningDate date ,Department varchar(255));
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(1,"Venkatesh","S","100000","2015/08/28","BANKING");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(2,"Ragavi","P","75000","2015/08/28","BUSINESS");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(3,"Gopinath","C","50000","2016/02/03","PHARMA");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(4,"Dinesh","G","50000","2016/02/03"," INSURANCE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(5,"Saibabu","E","40000","2017/08/07","SOFTWARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(6,"Hasan","S","29000","2017/08/07","MANUFACTURING");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(7,"Divya","P","33000","2017/08/07","HEALTHCARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(8,"Aravindan","R","40000","2017/08/07","HEALTHCARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(9,"Sathish","MD","45000","2016/02/03","AUTOMOBILE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(10,"Prasanth","PKP","34000","2016/02/03","INSURANCE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(11,"Vijay","R","25684","2016/02/03","BUSINESS");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(12,"Sivakumar","K","54789","2016/02/03","SOFTWARE");
+
+/*select *from Employee;*/
+/*select FirstName,LastName from Employee;*/
+/*select `FirstName`  Employee_Name from Employee;*/
+/*select FirstName from Employee where FirstName Like '%Divya%';*/
+/*select UPPER(FirstName) from Employee;*/
+/*select DISTINCT Department from Employee;*/
+/*select SUBSTRING(FirstName,1,3) from Employee;*/
+/*select POSITION("a" IN "Ragavi") from Employee where FirstName='Ragavi';*/
+/*select RTRIM(FirstName) from Employee;*/
+/*select LTRIM(FirstName) from Employee;*/
+/*select LENGTH(FirstName) FROM Employee;*/
+/*select REPLACE(FirstName,'a','$') from Employee;*/
+/*select CONCAT (FirstName,'_',LastName) from Employee;*/
+/*select FirstName,year(JoiningDate),month(JoiningDate),day(JoiningDate) from Employee;*/
+/*select *  from Employee ORDER BY FirstName ASC;*/
+/*select * from Employee ORDER BY FirstName DESC;*/
+/*select * from Employee  ORDER BY  FirstName ASC;*/
+/*select * from Employee where FirstName="Dinesh";*/
+/*select * from Employee where  FirstName in("Dinesh","Roy");*/
+/*select * from Employee where FirstName not in("Dinesh","Roy");*/
+/*select * from Employee where FirstName Like 'S%';*/
+/*select  * from Employee Where FirstName Like '%v%';*/
+/*select * from Employee where FirstName Like '%n';*/
+-- select * from Employee where length(FirstName)=4 and FirstName Like '%n' ;
+-- select * from Employee where length(FirstName)=4 and FirstName like '%j';
+-- select * from Employee where salary >60000;
+-- select * from Employee where salary <80000;
+-- select * from Employee where salary >=50000  and salary<=80000;
+-- select * from Employee where FirstName in ('Venkatesh','Ragavi');
+-- select * from Employee where year(JoiningDate)=2015;
+-- select * from Employee where month(JoiningDate)=1;
+-- select * from Employee where year(JoiningDate)<2017;
+-- select * from Employee where month(JoiningDate)>1 and year(JoiningDate)>2016;
+-- select JoiningDate,now() from Employee;
+-- select Department,sum(salary) from Employee group by Department;
+-- select replace(LastName,'%',' ') from Employee;
+-- select Department,sum(salary) from Employee  group by Department order by sum(Salary) desc;
+-- select Department,count(FirstName),sum(salary) from Employee group by Department order by sum(Salary) desc;
+-- select Department,avg(Salary) avg_sal  from Employee group by Department order by avg_sal ASC;
+-- SELECT DEPARTMENT,MAX(SALARY) MAXSALARY
+-- FROM Employee GROUP BY DEPARTMENT ORDER BY MAXSALARY ASC;
+-- SELECT DEPARTMENT,Min(SALARY) MinSALARY
+-- FROM Employee GROUP BY DEPARTMENT ORDER BY MinSALARY ASC;
+
+-- SELECT Department,SUM(Salary) TOTAL_SALARY FROM Employee GROUP BY Department HAVING SUM(Salary) >800000 ORDER BY TOTAL_SALARY DESC;
+create table Incentives (Employee_ref_id int ,incentive_date date ,incentive_amount int);
+insert into Incentives(`Employee_ref_id`,`incentive_date`,`incentive_amount`) values(1,"2016-02-01","5000");
+insert into Incentives(`Employee_ref_id`,`incentive_date`,`incentive_amount`) values(2,"2016-02-01","3000");
+insert into Incentives(`Employee_ref_id`,`incentive_date`,`incentive_amount`) values(3,"2017-02-01","4000");
+insert into Incentives(`Employee_ref_id`,`incentive_date`,`incentive_amount`) values(1,"2017-01-01","4500");
+insert into Incentives(`Employee_ref_id`,`incentive_date`,`incentive_amount`) values(2,"2017-01-01","3500");
+-- select * from Incentives;
+-- select FirstName, incentive_amount FROM Employee A INNER JOIN  Incentives B ON A.Emp_Id=B.Employee_ref_id;
+-- -- select FirstName, incentive_amount FROM Employee A INNER JOIN  Incentives B ON A.Emp_Id=B.Employee_ref_id where incentive_amount>3000;
+-- select FirstName, ifnull(incentive_amount,0) FROM Employee A LEFT JOIN  Incentives B  on A.Emp_Id=B.Employee_ref_id;
+-- select FirstName, ifnull(incentive_amount,0) FROM Employee A LEFT JOIN  Incentives B  on A.Emp_Id=B.Employee_ref_id;
+-- SELECT DEPARTMENT,(SELECT ifnull(MAX(INCENTIVE_AMOUNT),0)  FROM Incentives WHERE EMPLOYEE_REF_ID=Emp_id) MAX_INCENTIVE 	FROM Employee;
+-- select * from Employee order by Salary Desc limit 2;
+-- select * from Employee order by Salary Desc limit 5;
+select * from Employee order by Salary Desc limit ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- create database Employee1
+ create table Employee(Emp_Id int PRIMARY KEY,FirstName varchar(255),LastName varchar(255),Salary varchar(255),JoiningDate date ,Department varchar(255));
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(1,"Venkatesh","S","100000","2015/08/28","BANKING");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(2,"Ragavi","P","75000","2015/08/28","BUSINESS");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(3,"Gopinath","C","50000","2016/02/03","PHARMA");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(4,"Dinesh","G","50000","2016/02/03"," INSURANCE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(5,"Saibabu","E","40000","2017/08/07","SOFTWARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(6,"Hasan","S","29000","2017/08/07","MANUFACTURING");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(7,"Divya","P","33000","2017/08/07","HEALTHCARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(8,"Aravindan","R","40000","2017/08/07","HEALTHCARE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(9,"Sathish","MD","45000","2016/02/03","AUTOMOBILE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(10,"Prasanth","PKP","34000","2016/02/03","INSURANCE");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(11,"Vijay","R","25684","2016/02/03","BUSINESS");
+insert into Employee(Emp_Id,FirstName,LastName,Salary,JoiningDate,Department) values(12,"Sivakumar","K","54789","2016/02/03","SOFTWARE");
+
+/*select *from Employee;*/
+/*select FirstName,LastName from Employee;*/
+/*select `FirstName`  Employee_Name from Employee;*/
+/*select FirstName from Employee where FirstName Like '%Divya%';*/
+/*select UPPER(FirstName) from Employee;*/
+/*select DISTINCT Department from Employee;*/
+/*select SUBSTRING(FirstName,1,3) from Employee;*/
+/*select POSITION("a" IN "Ragavi") from Employee where FirstName='Ragavi';*/
+/*select RTRIM(FirstName) from Employee;*/
+/*select LTRIM(FirstName) from Employee;*/
+/*select LENGTH(FirstName) FROM Employee;*/
+/*select REPLACE(FirstName,'a','$') from Employee;*/
+/*select CONCAT (FirstName,'_',LastName) from Employee;*/
+/*select FirstName,year(JoiningDate),month(JoiningDate),day(JoiningDate) from Employee;*/
+/*select *  from Employee ORDER BY FirstName ASC;*/
+/*select * from Employee ORDER BY FirstName DESC;*/
+/*select * from Employee  ORDER BY  FirstName ASC;*/
+/*select * from Employee where FirstName="Dinesh";*/
+/*select * from Employee where  FirstName in("Dinesh","Roy");*/
+/*select * from Employee where FirstName not in("Dinesh","Roy");*/
+/*select * from Employee where FirstName Like 'S%';*/
+/*select  * from Employee Where FirstName Like '%v%';*/
+/*select * from Employee where FirstName Like '%n';*/
+-- select * from Employee where length(FirstName)=4 and FirstName Like '%n' ;
+-- select * from Employee where length(FirstName)=4 and FirstName like '%j';
+-- select * from Employee where salary >60000;
+-- select * from Employee where salary <80000;
+-- select * from Employee where salary >=50000  and salary<=80000;
+-- select * from Employee where FirstName in ('Venkatesh','Ragavi');
+-- select * from Employee where year(JoiningDate)=2015;
+-- select * from Employee where month(JoiningDate)=1;
+-- select * from Employee where year(JoiningDate)<2017;
+-- select * from Employee where month(JoiningDate)>1 and year(JoiningDate)>2016;
+-- select JoiningDate,now() from Employee;
+-- select Department,sum(salary) from Employee group by Department;
+-- select replace(LastName,'%',' ') from Employee;
+-- select Department,sum(salary) from Employee  group by Department order by sum(Salary) desc;
+-- select Department,count(FirstName),sum(salary) from Employee group by Department order by sum(Salary) desc;
+-- select Department,avg(Salary) avg_sal  from Employee group by Department order by avg_sal ASC;
+-- SELECT DEPARTMENT,MAX(SALARY) MAXSALARY
+-- FROM Employee GROUP BY DEPARTMENT ORDER BY MAXSALARY ASC;
+-- SELECT DEPARTMENT,Min(SALARY) MinSALARY
+-- FROM Employee GROUP BY DEPARTMENT ORDER BY MinSALARY ASC;
+
+-- SELECT Department,SUM(Salary) TOTAL_SALARY FROM Employee GROUP BY Department HAVING SUM(Salary) >800000 ORDER BY TOTAL_SALARY DESC;
+create table Incentives (Employee_ref_id int ,incentive_date date ,incentive_amount int);
+insert into Incentives(`Employee_ref_id`,`incentive_date`,`incentive_amount`) values(1,"2016-02-01","5000");
+insert into Incentives(`Employee_ref_id`,`incentive_date`,`incentive_amount`) values(2,"2016-02-01","3000");
+insert into Incentives(`Employee_ref_id`,`incentive_date`,`incentive_amount`) values(3,"2017-02-01","4000");
+insert into Incentives(`Employee_ref_id`,`incentive_date`,`incentive_amount`) values(1,"2017-01-01","4500");
+insert into Incentives(`Employee_ref_id`,`incentive_date`,`incentive_amount`) values(2,"2017-01-01","3500");
+-- select * from Incentives;
+-- select FirstName, incentive_amount FROM Employee A INNER JOIN  Incentives B ON A.Emp_Id=B.Employee_ref_id;
+-- -- select FirstName, incentive_amount FROM Employee A INNER JOIN  Incentives B ON A.Emp_Id=B.Employee_ref_id where incentive_amount>3000;
+-- select FirstName, ifnull(incentive_amount,0) FROM Employee A LEFT JOIN  Incentives B  on A.Emp_Id=B.Employee_ref_id;
+-- select FirstName, ifnull(incentive_amount,0) FROM Employee A LEFT JOIN  Incentives B  on A.Emp_Id=B.Employee_ref_id;
+-- SELECT DEPARTMENT,(SELECT ifnull(MAX(INCENTIVE_AMOUNT),0)  FROM Incentives WHERE EMPLOYEE_REF_ID=Emp_id) MAX_INCENTIVE 	FROM Employee;
+-- select * from Employee order by Salary Desc limit 2;
+-- select * from Employee order by Salary Desc limit 5;
+-- select FirstName,
+-- CASE FirstName
+--     WHEN 'venkatesh'
+--     THEN Salary * .2
+--     WHEN 'Gopinath'
+--     THEN Salary * .10
+--     ELSE Salary * .15
+--   END "Deduced_Amount"
+-- FROM
+--   Employee;
+-- SELECT * FROM Employee WHERE LOWER(LastName)=UPPER(LastName);
+UPDATE   Incentives SET  incentive_amount='77777' WHERE Employee_ref_id=
+  (   SELECT      Emp_id
+    FROM      Employee
+    WHERE      FirstName='Dinesh'  );
